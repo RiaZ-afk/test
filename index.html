@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANT Youth Foundation | Empowering Next-Gen STEM Leaders</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #334155;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
+
+        /* 顶部导航栏 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1.2em;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* 头部 Hero 区域 */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 15px 0;
+            font-size: 3em;
+            letter-spacing: -1px;
+            font-weight: 800;
+        }
+
+        header p {
+            margin: 0 auto;
+            font-size: 1.25em;
+            color: #94a3b8;
+            max-width: 650px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        /* 容器布局 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            font-size: 1.1em;
+            color: #64748b;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        /* 网格卡片 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.4em;
+        }
+
+        .card p {
+            color: #475569;
+        }
+
+        /* 数据/亮点条带 */
+        .stats-banner {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 50px 20px;
+            margin: 40px 0;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5em;
+            color: var(--accent);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* 联系与合规板块 */
+        .contact-box {
+            background: #f1f5f9;
+            border-left: 5px solid var(--accent);
+            padding: 40px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+            font-size: 1.05em;
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#" class="nav-brand">ANT Youth Foundation</a>
+        <ul class="nav-links">
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 顶部 Banner -->
+    <header>
+        <div class="badge">501(c)(3) NON-PROFIT ORGANIZATION</div>
+        <h1>Empowering Next-Gen STEM Leaders</h1>
+        <p>Bridging youth education, digital technology innovation, and biomedical health sciences for a sustainable future.</p>
+    </header>
+
+    <!-- 核心数据栏 -->
+    <div class="stats-banner">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h4>501(c)(3)</h4>
+                <p>Tax-Exempt Status</p>
+            </div>
+            <div class="stat-item">
+                <h4>STEM & Tech</h4>
+                <p>Core Curriculum Focus</p>
+            </div>
+            <div class="stat-item">
+                <h4>San Jose, CA</h4>
+                <p>Global Headquarters</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- 使命板块 -->
+        <section id="mission">
+            <h2>Our Mission & Vision</h2>
+            <p class="section-desc">We are committed to democratizing access to high-level technical skills and scientific exploration for youth, preparing them to solve tomorrow's complex global challenges.</p>
+            <p>ANT Youth Foundation operates as a dedicated non-profit entity providing structured educational frameworks, hands-on software development initiatives, and community leadership opportunities. Through mentorship and project-based learning, we enable students to move beyond theoretical knowledge into real-world technological execution.</p>
+        </section>
+
+        <!-- 项目板块 -->
+        <section id="programs">
+            <h2>Core Initiatives</h2>
+            <p class="section-desc">Explore our flagship pillars designed to foster intellectual growth and innovation.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>STEM & Health Sciences</h3>
+                    <p>Advanced workshops, research methodology guides, and foundational courses bridging computer science with biomedical applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Software Publishing & Apps</h3>
+                    <p>Supporting youth developers in building, testing, and responsibly publishing educational and utility applications on digital platforms.</p>
+                </div>
+                <div class="card">
+                    <h3>Community & Mentorship</h3>
+                    <p>Connecting young innovators with seasoned professionals, academic mentors, and collaborative project teams worldwide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于与合规板块 -->
+        <section id="about">
+            <h2>Organization Governance</h2>
+            <p class="section-desc">Operating with full transparency and strict adherence to U.S. federal non-profit standards.</p>
+            <div class="contact-box" id="contact">
+                <p><strong>Legal Entity Name:</strong> ANT Youth Foundation</p>
+                <p><strong>Tax Classification:</strong> U.S. 501(c)(3) Tax-Exempt Non-Profit Organization</p>
+                <p><strong>Headquarters:</strong> 2383 TULIP RD, SAN JOSE, CA 95128, USA</p>
+                <p><strong>Official Inquiries:</strong> admin@antcenter.org</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 ANT Youth Foundation. All Rights Reserved.</p>
+        <p>A registered non-profit organization dedicated to youth education and technological advancement.</p>
+    </footer>
+
+</body>
+</html>
